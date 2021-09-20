@@ -1,5 +1,10 @@
 # react-native-metadata
 
+[![npm version](https://img.shields.io/npm/v/react-native-metadata.svg)](https://npmjs.com/package/react-native-metadata)
+[![npm downloads](https://img.shields.io/npm/dt/react-native-metadata.svg)](https://npmjs.com/package/react-native-metadata)
+[![CircleCI](https://circleci.com/gh/ridvanaltun/react-native-metadata/tree/master.svg?style=shield)](https://circleci.com/gh/ridvanaltun/react-native-metadata/tree/master)
+[![license](https://img.shields.io/npm/l/react-native-metadata.svg)](https://github.com/ridvanaltun/react-native-metadata/blob/master/LICENSE)
+
 > Ability to retrieve app metadata.
 
 ## Installation
