@@ -6,7 +6,12 @@
 
 ```sh
 npm install react-native-metadata
+
+# install pods for ios
+npx pod-install ios
 ```
+
+Autolinking takes care of the rest.
 
 ## Usage
 
