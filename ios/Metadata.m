@@ -4,16 +4,16 @@
 
 RCT_EXPORT_MODULE()
 
-// Example method
-// See // https://reactnative.dev/docs/native-modules-ios
-RCT_REMAP_METHOD(multiply,
-                 multiplyWithA:(nonnull NSNumber*)a withB:(nonnull NSNumber*)b
-                 withResolver:(RCTPromiseResolveBlock)resolve
-                 withRejecter:(RCTPromiseRejectBlock)reject)
-{
-  NSNumber *result = @([a floatValue] * [b floatValue]);
+- (NSDictionary *)constantsToExport {
+    NSString *iosVersion = [[UIDevice currentDevice] systemVersion];
+    NSString *infoDeviceName = [[UIDevice currentDevice] name];
 
-  resolve(result);
+    return @{
+        @"version": [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"],
+        @"shortVersion": [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"],
+        @"bundleIdentifier": [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleIdentifier"],
+        @"bundleName": [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleName"],
+    };
 }
 
 @end

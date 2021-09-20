@@ -1,18 +1,41 @@
-import * as React from 'react';
+import React from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, Platform } from 'react-native';
 import Metadata from 'react-native-metadata';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
+  const isIOS = Platform.OS === 'ios';
 
-  React.useEffect(() => {
-    Metadata.multiply(3, 7).then(setResult);
-  }, []);
+  const {
+    signingSignature,
+    version,
+    shortVersion,
+    packageName,
+    bundleIdentifier,
+    bundleName,
+  } = Metadata;
 
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <View>
+        <Text style={styles.title}>Signing Signature:</Text>
+        <Text>{isIOS ? '-' : signingSignature}</Text>
+
+        <Text style={styles.title}>Version:</Text>
+        <Text>{shortVersion}</Text>
+
+        <Text style={styles.title}>Version Code:</Text>
+        <Text>{version}</Text>
+
+        <Text style={styles.title}>Package Name:</Text>
+        <Text>{isIOS ? '-' : packageName}</Text>
+
+        <Text style={styles.title}>Bundle Identifier:</Text>
+        <Text>{isIOS ? bundleIdentifier : '-'}</Text>
+
+        <Text style={styles.title}>Bundle Name:</Text>
+        <Text>{isIOS ? bundleName : '-'}</Text>
+      </View>
     </View>
   );
 }
@@ -27,5 +50,10 @@ const styles = StyleSheet.create({
     width: 60,
     height: 60,
     marginVertical: 20,
+  },
+  title: {
+    fontWeight: 'bold',
+    marginTop: 20,
+    marginBottom: 5,
   },
 });

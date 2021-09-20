@@ -1,6 +1,6 @@
 # react-native-metadata
 
-Ability to retrieve app metadata
+> Ability to retrieve app metadata.
 
 ## Installation
 
@@ -11,12 +11,25 @@ npm install react-native-metadata
 ## Usage
 
 ```js
-import Metadata from "react-native-metadata";
+import Metadata from 'react-native-metadata';
 
 // ...
 
-const result = await Metadata.multiply(3, 7);
+const {
+  signingSignature,
+  version,
+  shortVersion,
+  packageName,
+  bundleIdentifier,
+  bundleName,
+} = Metadata;
 ```
+
+## Example
+
+| Android                                                   |                        iOS                        |
+| --------------------------------------------------------- | :-----------------------------------------------: |
+| <img src="./docs/android.png" alt="Android" width="250"/> | <img src="./docs/ios.png" alt="iOS" width="250"/> |
 
 ## Contributing
 

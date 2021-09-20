@@ -1,7 +1,12 @@
 import { NativeModules } from 'react-native';
 
 type MetadataType = {
-  multiply(a: number, b: number): Promise<number>;
+  signingSignature: undefined | string;
+  shortVersion: string;
+  version: string;
+  packageName: undefined | string;
+  bundleIdentifier: undefined | string;
+  bundleName: undefined | string;
 };
 
 const { Metadata } = NativeModules;
